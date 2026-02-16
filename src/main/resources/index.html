@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Java HTTP Server</title>
+<link rel="icon" type="image/jpeg" href="/image.jpg">
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: white;
+}
+
+header {
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    background: #020617;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+nav a {
+    color: #94a3b8;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.hero {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle at top, #1e293b, #020617);
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #94a3b8;
+}
+
+button {
+    margin-top: 30px;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 40px;
+    font-size: 1rem;
+    background: #22c55e;
+    color: black;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Http Web Server</div>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/stress.html">Stress Test</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div>
+        <h1>Custom Java HTTP Server</h1>
+        <p>You built your own web server from scratch.</p>
+        <button onclick="alert('Server is alive!')">
+            Test Server
+        </button>
+    </div>
+</section>
+
+</body>
+</html>
