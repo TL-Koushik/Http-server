@@ -7,7 +7,11 @@ import com.tlkoushik.core.Server;
 public class HttpServer {
     public static void main(String[] args) {
         System.out.println("Server Starting");
-        String path = "/home/luffy/coding/httpserver/src/main/resources/http.json";
+        if (args.length != 1) {
+            System.out.println("path not provided or provided more than two argunments");
+            System.exit(0);
+        }
+        String path = args[0].trim();
         ConfigurationManager.loadConfiguration(path);
         Configuration config = ConfigurationManager.getConfiguration();
         System.out.println("Running on " + config.getPort() + " port");
