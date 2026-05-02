@@ -6,11 +6,9 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 import java.net.Socket;
-import java.net.SocketException;
 
 import com.tlkoushik.Http.HttpHeader;
 import com.tlkoushik.Http.HttpParser;
-import com.tlkoushik.Http.HttpParsingException;
 import com.tlkoushik.Http.HttpRequest;
 import com.tlkoushik.Http.HttpResponse;
 import com.tlkoushik.Http.HttpStatusCode;
@@ -77,16 +75,16 @@ public class HttpConnectionWorkerThread implements Runnable {
     }
 
     private boolean shouldKeepAlive(HttpRequest request) {
-        String connectionHeader = request.getHeaderValue("connection");
+        String connectionHeaderValue = request.getHeaderValue("connection");
 
         if (HttpVersion.HTTP_1_1.equals(request.getVersion())) {
-            if (connectionHeader.equalsIgnoreCase("close")) {
+            if (connectionHeaderValue.equalsIgnoreCase("close")) {
                 return false;
             }
             return true;
         }
 
-        if (connectionHeader.equalsIgnoreCase("keep-alive")) {
+        if (connectionHeaderValue.equalsIgnoreCase("keep-alive")) {
             return true;
         }
         return false;
